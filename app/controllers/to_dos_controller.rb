@@ -14,5 +14,11 @@ class ToDosController < ApplicationController
     else
       render :new
     end
- end
+  end
+
+  private
+
+  def to_do_params
+    params.require(:to_do).permit(:title)
+  end
 end
