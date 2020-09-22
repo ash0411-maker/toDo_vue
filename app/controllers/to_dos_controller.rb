@@ -17,7 +17,7 @@ class ToDosController < ApplicationController
   end
 
   def edit
-    @to_do = ToDo.find_by(id: params[:id])
+    @to_do = ToDo.find(params[:id])
   end
 
   private
