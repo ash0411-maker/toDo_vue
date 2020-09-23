@@ -5,6 +5,7 @@
       :action="toDo.action"
       method="post">
       <el-form-item>
+        <!-- el-inputコンポーネントではtype属性を設定していないが、設定しない場合、type属性はtext -->
         <el-input
           type="hidden"
           :value="toDo.csrfToken"
@@ -35,13 +36,18 @@
 </template>
 
 <script>
-export default {
-  data: function () {
-    return {
-      message: "やっとできた！！！！"
+  export default {
+    data() {
+      return {
+        toDo: {
+          csrfToken: document.getElementsByName('csrf-token')[0].content,
+          title: '',
+          expiredAt: new Date(),
+          action: '/to_dos'
+        }
+      }
     }
   }
-}
 </script>
 
 <style scoped>
