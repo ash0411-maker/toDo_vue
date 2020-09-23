@@ -1,3 +1,7 @@
 <% @to_dos.each do |to_do| %>
  <p><%= to_do.title %></p>
 <% end %>
+
+<% @to_dos.each do |to_do| %>
+ <%= link_to to_do.title, to_do_path(to_do),  method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
+<% end %>

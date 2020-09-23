@@ -1,5 +1,5 @@
 class ToDosController < ApplicationController
-  before_action :set_to_do, only: [:edit, :update]
+  before_action :set_to_do, only: [:edit, :update, :destroy]
 
   def index
     @to_dos = ToDo.all
@@ -41,6 +41,6 @@ class ToDosController < ApplicationController
   end
 
   def set_to_do
-    @to_do = ToDo.find_by(id: params[:id])
+    @to_do = ToDo.find(params[:id])
   end
 end
