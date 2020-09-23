@@ -1,6 +1,6 @@
 <% @to_dos.each do |to_do| %>
     <h2><%= to_do.title %></h2>
-    <%# <h3><%= to_do.expired_at&.strftime('%Y/%m/%d %H:%M') %></h3> %>
-    <%= to_do.expired_at&.to_s %>
+    <%# <><%= to_do.expired_at&.strftime('%Y/%m/%d %H:%M') %>
+    <h3><%= to_do.expired_at&.to_s %></h3>
 <% end %>
 
