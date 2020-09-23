@@ -27,7 +27,12 @@ class ToDosController < ApplicationController
     else
       render :edit
     end
- end
+  end
+
+  def destroy
+    @to_do.destroy
+    redirect_to to_dos_url
+  end
 
   private
 
