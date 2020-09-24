@@ -7,15 +7,37 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
+import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/ja'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI, { locale })
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     render: h => h(App)
   }).$mount()
+// $mountメソッドはnew.Vueで作成されたインスタンスをマウントすること（実際に描写すること）を意味。
+// $mountメソッドは引数で、どの部分にマウントするのかを指定することができ、
+// 例えばここでは特定のid属性を指定するなどして、その中身にDOMを生成することができる・
+
   document.body.appendChild(app.$el)
+  // 今回はbody要素の最後にapp.$elが追加されることになる。
+// appとはnew.Vueで生成したVueインスタンスのことを示しており、
+// app.$elとはnew.Vueで生成した
+/* <template></template> が該当する*/
 
   console.log(app)
 })
+
+
+
+// render: h => h(App)
+// createElement == h
+// App == import App from '../app.vue'
+
+// render: function (createElement) {
+//   return createElement(App)
+// }
 
 
 // The above code uses Vue without the compiler, which means you cannot
